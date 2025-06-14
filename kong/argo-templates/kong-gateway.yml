@@ -14,7 +14,7 @@ spec:
     helm:
       releaseName: apigateway
       valueFiles:
-      - ../kong-cp-values.yml
+      - ../argo-templates/kong-cp-values.yml
   destination:
     server: "https://kubernetes.default.svc"
     namespace: kong
