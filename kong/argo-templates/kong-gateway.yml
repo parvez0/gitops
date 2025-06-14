@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: kong-apigateway
-  namespace: argocd
+  namespace: kong
 spec:
   project: kong
   source:
