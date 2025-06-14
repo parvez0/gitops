@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: kong-apigateway
+  namespace: argocd
+spec:
+  project: kong
+  source:
+    chart: kong
+    repoURL: https://charts.konghq.com
+    targetRevision: 1.16.1
+    helm:
+      releaseName: apigateway
+      valueFiles:
+      - ../kong-cp-values.yml
+  destination:
+    server: "https://kubernetes.default.svc"
+    namespace: kong
